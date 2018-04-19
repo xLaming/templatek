@@ -1,0 +1,23 @@
+TemplateK
+--- Credits: Paulo Rodrigues(xLaming)
+------- Current version: 1.0
+------- https://github.com/xlaming/templatek
+
+
+
+* VERSION 1.0
+- NEW:
+-> Add headers dinamically
+-> Set variables
+-> Minify html like GZip compression
+-> Set website in maintenance
+-> Load everything from separated plugins
+-> PHP tags {PHP} {/PHP}
+-> Check if it has PHP codes and remove them
+-> Comments system (for internal usage) (e.g: <!--# TEXT HERE #-->
+
+- FIXED:
+-> Nothing
+
+- DEPRECATED:
+-> Nothing
