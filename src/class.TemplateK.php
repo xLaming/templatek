@@ -1,4 +1,12 @@
 <?php
+/**
+ * MIT License. Copyright (c) 2018 Paulo Rodriguez
+ * TemplateK is a template engine, that will make coding easy,
+ * More than you think!
+ * @author Paulo Rodriguez (xLaming)
+ * @link https://github.com/xlaming/TemplateK
+ * @version 1.0 stable
+ */
 class TemplateK
 {
 	/**
@@ -32,7 +40,7 @@ class TemplateK
 	 * @var array
 	 */
 	public $varList  = [];
-	
+
 	/**
 	 * Store all content. It is used to show later
 	 * @var string
