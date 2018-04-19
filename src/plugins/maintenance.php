@@ -1,11 +1,11 @@
 <?php
-$className = 'InternalComments'; // set class name
+$className = 'Maintenance'; // set class name
 
 /**
  * MIT License. Copyright (c) 2018 Paulo Rodriguez
  * This file is part of TemplateK.
  */
-class InternalComments
+class Maintenance
 {
 	public $template;
 	public $content;
@@ -30,7 +30,13 @@ class InternalComments
 	 */
 	public function parse()
 	{
-		$this->content = preg_replace('/<!--#(.*?)#-->/', '', $this->content);
+		/**
+		 * If it is under maintenance set content with the maintenance message.
+		 */
+		if ($this->template->settings['maintenance'])
+		{
+			$this->content = $this->template->settings['message'];
+		}
 		return $this->content;
 	}
 }

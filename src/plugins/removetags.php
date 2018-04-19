@@ -1,11 +1,11 @@
 <?php
-$className = 'InternalComments'; // set class name
+$className = 'RemovePHPTags'; // set class name
 
 /**
  * MIT License. Copyright (c) 2018 Paulo Rodriguez
  * This file is part of TemplateK.
  */
-class InternalComments
+class RemovePHPTags
 {
 	public $template;
 	public $content;
@@ -30,7 +30,7 @@ class InternalComments
 	 */
 	public function parse()
 	{
-		$this->content = preg_replace('/<!--#(.*?)#-->/', '', $this->content);
+		$this->content = preg_replace('/<\\?.*(\\?>|$)/Us', '', $this->content);
 		return $this->content;
 	}
 }

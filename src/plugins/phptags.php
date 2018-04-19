@@ -1,11 +1,11 @@
 <?php
-$className = 'InternalComments'; // set class name
+$className = 'PHPTags'; // set class name
 
 /**
  * MIT License. Copyright (c) 2018 Paulo Rodriguez
  * This file is part of TemplateK.
  */
-class InternalComments
+class PHPTags
 {
 	public $template;
 	public $content;
@@ -30,7 +30,17 @@ class InternalComments
 	 */
 	public function parse()
 	{
-		$this->content = preg_replace('/<!--#(.*?)#-->/', '', $this->content);
+		/**
+		 * Replace [PHP] [/PHP] with eval
+		 */
+		$this->content = preg_replace_callback(
+			'/\[PHP\](.*?)\[\/PHP\]/is',
+			function($code) {
+				return eval($code[1]);
+			},
+			$this->content
+		);
+
 		return $this->content;
 	}
 }
